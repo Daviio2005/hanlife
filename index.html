@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="estilos-index.css">
+</head>
+<body>
+    <!-- Encabezado con el logo -->
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo" class="logo">
+            <marquee behavior="" direction=""><h1>Estas probando la versión incial, puede que presente problemas, así que pendiente a las proximas actualizaciones!</h1></marquee>
+            <nav>
+                <button onclick="showHelp()">Ayuda</button>
+                <button onclick="showContact()">Contacto</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Formulario de inicio de sesión -->
+    <div id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <label for="show-password">
+            <input type="checkbox" id="show-password" onclick="togglePassword()"> Mostrar Contraseña
+        </label>
+        <button onclick="login()">Iniciar Sesión</button>
+        <a href="#" onclick="showRegister()">¿No tienes una cuenta? Regístrate</a>
+    </div>
+
+    <!-- Formulario de registro -->
+    <div id="register-form" style="display:none;">
+        <h2>Registrarse</h2>
+        <input type="text" id="register-username" placeholder="Nombre de Usuario" required>
+        <input type="password" id="register-password" placeholder="Contraseña" required>
+        <input type="password" id="confirm-password" placeholder="Confirmar Contraseña" required>
+        <button onclick="register()">Registrarse</button>
+        <a href="#" onclick="showLogin()">¿Ya tienes cuenta? Iniciar sesión</a>
+    </div>
+
+    <!-- Perfil del usuario -->
+    <div id="profile" style="display:none;">
+        <h2>Perfil del Usuario</h2>
+        <p><strong>Nombre:</strong> <span id="profile-name"></span></p>
+        <p><strong>Tipo de Sangre:</strong> <span id="profile-blood-type"></span></p>
+        <p><strong>Teléfono:</strong> <span id="profile-phone"></span></p>
+        <p><strong>Enfermedades:</strong> <span id="profile-diseases"></span></p>
+        <p><strong>Entidad Prestadora de Servicios:</strong> <span id="profile-provider"></span></p>
+        <button onclick="editProfile()">Editar Perfil</button>
+    </div>
+
+    <!-- Formulario de edición de perfil -->
+    <div id="edit-profile" style="display:none;">
+        <h2>Editar Perfil</h2>
+        <input type="text" id="edit-name" placeholder="Nombre" required>
+        <input type="text" id="edit-phone" placeholder="Teléfono" required>
+        <input type="text" id="edit-blood-type" placeholder="Tipo de Sangre" required>
+        <textarea id="edit-diseases" placeholder="Enfermedades"></textarea>
+        <input type="text" id="edit-provider" placeholder="Entidad Prestadora de Servicios" required>
+        <button onclick="saveProfile()">Guardar Cambios</button>
+    </div>
+
+    <!-- Sección de Ayuda -->
+    <div id="help" style="display:none;">
+        <h2>Sección de Ayuda</h2>
+        <textarea placeholder="Escribe tu mensaje aquí"></textarea>
+        <button onclick="backToLogin()" class="back-button">Volver</button>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <div id="contact" style="display:none;">
+        <h2>Contacto</h2>
+        <p>Teléfono: +1 (800) 123-4567</p>
+        <p>Email: contacto@empresa.com</p>
+        <button onclick="backToLogin()" class="back-button">Volver</button>
+    </div>
+
+    <script src="script-index.js"></script>
+</body>
+</html>
